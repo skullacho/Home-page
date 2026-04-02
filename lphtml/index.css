@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.div-header {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#221b1b98, #000000), url('./img/images_89.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #221b1b;
+    height: 80px;
+    
+}
+.header h1{
+    color: #ffffff;
+    margin-right: 41%;
+    
+}
+.header img { 
+    height: 60px; 
+}
+.main-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+#btn-compreja{
+    margin-top: 50px;
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 200px;
+    background: #311414;
+    color: #fff;
+    transition:  color 0.5s ease;
+    transition:  background 0.5s ease;
+}
+#btn-compreja:hover{
+    color: #311414;
+    background: #fff;
+}
+.contato {
+    background: #30c53f;
+    position: fixed;
+    padding: 15px;
+    border: none;
+    border-radius: 50%;
+    right: 40px;
+    bottom: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contato:hover{
+    transform: scale(1.1);
+}
