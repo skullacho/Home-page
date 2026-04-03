@@ -56,47 +56,46 @@ body {
     
 }
 
+/* Botão continua na direita */
 .menu-btn {
-  font-size: 35px;
+  font-size: 30px;
   cursor: pointer;
-  padding: 10px;
+  padding: 15px;
+  top: 10px;
+  z-index: 1001;
   color: white;
 }
 
-/* Sidebar */
+/* Menu agora é um "dropdown" pequeno */
 .sidebar {
-  position: fixed;
-  top: 0;
-  right: -250px; 
-  width: 250px;
-  height: 50vh;
+  position: absolute;
+  top: -400px; /* escondido */
+  right: 0px; /* gruda na direita */
+  width: 280px; /* NÃO ocupa tela toda */
   background: #311414;
-  padding-top: 50px;
-  transition: 0.3s;
-  margin-top: 68px;
-  z-index: 1;
-  
+  height: 40vh;
+  padding: 15px 0;
+  transition: 0.4s ease;
+  z-index: 1000;
 }
 
+/* Links */
 .sidebar a {
-  display: flex;
+  display: block;
   color: white;
-  padding: 10px;
+  padding: 12px;
   text-decoration: none;
-  font-size: 15px;
-  margin-left: 20%;
-  float: left;
-  margin-top: 20px;
-  
+  text-align: center;
+  margin-top: 2vh;
 }
 
 .sidebar a:hover {
-  background: #000000;
+  background: #333;
 }
 
 /* Quando abre */
 .sidebar.active {
-  right: 0;
+  top: 60px; /* aparece logo abaixo do botão */
 }
 
 @keyframes aparecer {
