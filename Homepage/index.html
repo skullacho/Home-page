@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora Imobiliária</title>
+    <link rel="stylesheet" href="./index.css">
+    <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <!-- Cluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css"/>
+
+</head>
+<body>
+    </div>
+    <div class="landing">
+        
+        <header class="header">
+            <img class="headerimg" src="./img/download.png" alt="">
+        
+            
+            <nav class="infos">
+                
+            </nav>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+    ☰
+    </div>
+
+    <!-- Menu lateral -->
+    <div id="sidebar" class="sidebar">
+      <a href="#">Imóveis</a>
+      <a href="#">Simular Financiamento</a>
+      <a href="#">Sobre Nós</a>
+      <a href="#">Área do cliente</a>
+      <a href="#">Contato</a>
+    </div>
+
+            <script src="./style.js"></script>
+        </header>
+
+        
+        
+        <main class="main-content">
+
+            
+
+            <div class="search-container">
+                
+                <div class="tabs">
+                    <button id="btn-comprar" class="tab-btn active" onclick="setAba('comprar')">Comprar</button>
+                    <button id="btn-alugar" class="tab-btn" onclick="setAba('alugar')">Alugar</button>
+                </div>
+
+                <div class="search-box">
+                    <div class="field-group">
+                        <label>Localização</label>
+                        <select id="select-local" class="select-imobiliaria">
+                            <option value="">Selecione a cidade...</option>
+                            <option value="sp">São Paulo - SP</option>
+                            <option value="rj">Rio de Janeiro - RJ</option>
+                            <option value="curitiba">Curitiba - PR</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Tipo de Imóvel</label>
+                        <select class="select-imobiliaria">
+                            <option value="casa">Casa</option>
+                            <option value="ap">Apartamento</option>
+                            <option value="lote">Terreno</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-buscar-main" onclick="buscar()">BUSCAR</button>
+                </div>
+            </div>
+        </main>
+
+            
+        </button>
+    </div>
+
+    <div class="secondstage">
+
+        <h2>Imóveis na Planta</h2>
+        <button class="btn">Lançamentos</button>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="img1.jpg" alt="">
+                <div class="card-content">
+                    <h3>Apartamento à venda com 2 quartos</h3>
+                    <p class="local">Sumaré</p>
+
+                    <div class="info">
+                    <span>73m²</span>
+                    <span>2 🛏</span>
+                    <span>1 🚗</span>
+                    </div>
+
+                    <p class="price">R$ 280.000,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img2.jpg" alt="">
+                <div class="card-content">
+                    <h3>Novo Villa Flora Hortolândia</h3>
+                    <p class="local">Hortolândia</p>
+
+                    <div class="info">
+                        <span>80m²</span>
+                        <span>2 🛏</span>
+                        <span>1 🚗</span>
+                    </div>
+
+                    <p class="price">R$ 400.000,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img1.jpg" alt="">
+                <div class="card-content">
+                    <h3>Apartamento à venda com 2 quartos</h3>
+                    <p class="local">Sumaré</p>
+
+                    <div class="info">
+                    <span>73m²</span>
+                    <span>2 🛏</span>
+                    <span>1 🚗</span>
+                    </div>
+
+                    <p class="price">R$ 280.000,00</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img1.jpg" alt="">
+                <div class="card-content">
+                    <h3>Apartamento à venda com 2 quartos</h3>
+                    <p class="local">Sumaré</p>
+
+                    <div class="info">
+                    <span>73m²</span>
+                    <span>2 🛏</span>
+                    <span>1 🚗</span>
+                    </div>
+
+                    <p class="price">R$ 280.000,00</p>
+                </div>
+            </div>
+
+        </div>
+        </section>
+    </div>
+    <div class="containermap">
+        <h2>Encontre o seu imóvel pelo mapa</h2>
+
+        <div class="map-container">
+            <div class="busca">Busca Avançada ⌄</div>
+            <div id="map"></div>
+        </div>
+
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+            <script src="./style.js"></script>
+    </div>
+    <script src="./style.js"></script>
+</body>
+</html>
