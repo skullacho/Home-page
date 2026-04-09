@@ -36,14 +36,14 @@ body {
     background-repeat: no-repeat;
     position: relative;
 }
+
 .headerimg{
     position: relative;
     width: 8rem;
     height: 10rem;
     animation: aparecer 0.5s ease-out;
-    
-    
 }
+
 .header {
     width: 100%;
     padding: 20px 30px;
@@ -53,7 +53,6 @@ body {
     background: #311414;
     height: 70px;
     animation: aparecer 0.5s ease-out;
-    
 }
 
 /* Botão continua na direita */
@@ -66,12 +65,12 @@ body {
   color: white;
 }
 
-/* Menu agora é um "dropdown" pequeno */
+/* Menu */
 .sidebar {
   position: absolute;
-  top: -400px; /* escondido */
-  right: 0px; /* gruda na direita */
-  width: 280px; /* NÃO ocupa tela toda */
+  top: -400px;
+  right: 0px;
+  width: 280px;
   background: #311414;
   height: 40vh;
   padding: 15px 0;
@@ -79,7 +78,6 @@ body {
   z-index: 1000;
 }
 
-/* Links */
 .sidebar a {
   display: block;
   color: white;
@@ -93,16 +91,14 @@ body {
   background: #333;
 }
 
-/* Quando abre */
 .sidebar.active {
-  top: 60px; /* aparece logo abaixo do botão */
+  top: 60px;
 }
 
 @keyframes aparecer {
     from { opacity: 0; transform: translateY(-150px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 
 .infos a {
     color: white;
@@ -135,7 +131,7 @@ body {
 
 .search-container { width: 100%; max-width: 850px; }
 
-.tabs { display: flex; gap: 5px; }
+.tabs { display: flex; gap: 5px; flex-wrap: wrap; }
 
 .tab-btn {
     margin-top: 15%;
@@ -183,13 +179,11 @@ body {
     align-self: flex-end;
 }
 
-
 .secondstage {
   padding: 40px;
   align-items: center;
   padding-top: 15vh;
   background-color: #311414;
-
 }
 
 h2 {
@@ -210,7 +204,6 @@ h2 {
   margin-top: 5vh;
   margin-left: 25vh;
   font-size: 20px;
-
 }
 
 .cards {
@@ -219,10 +212,7 @@ h2 {
   margin-top: 10vh;
   margin-left: 25vh;
   margin-bottom: 15vh;
-  
-  
 }
-
 
 .card {
   background: white;
@@ -237,13 +227,11 @@ h2 {
   transform: translateY(-5px);
 }
 
-
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
-
 
 .card-content {
   padding: 15px;
@@ -273,17 +261,12 @@ h2 {
 
 .containermap{
   font-family: Arial;
-  margin: 0;
   padding: 40px;
   background: #311414;
   margin-top: 10vh;
   margin-left: 20vh;
   margin-right: 20vh;
-  align-items: center;
   margin-bottom: 10vh;
-}
-h2 {
-  margin-bottom: 20px;
 }
 
 .map-container {
@@ -331,3 +314,53 @@ h2 {
   margin-left: 20vh;
   font-size: 3vh;
 }
+
+/* ===== RESPONSIVO (SEM MUDAR SEU LAYOUT) ===== */
+@media (max-width: 768px) {
+
+  h2,
+  .btn,
+  .cards,
+  .containermap,
+  .h3-1,
+  .h3-2,
+  .info-sobrenos p {
+    margin-left: 20px !important;
+    margin-right: 20px;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .search-box {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tab-btn {
+    width: 100%;
+  }
+
+  #map {
+    height: 300px;
+  }
+
+  h1 {
+  margin-left: 0 !important;
+  text-align: center;
+  padding: 0 20px;
+  }
+
+  .btn {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  display: block;          /* faz ocupar linha inteira */
+  width: calc(100% - 40px); /* deixa com espaço lateral */
+    
+  margin: 20px auto;       /* centraliza */
+  text-align: center;
+  }
+}
+
