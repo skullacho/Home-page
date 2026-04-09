@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Seção Superior */
+.div-header {
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #311414;
+    height: 70px;
+}
+
+.header {
+    width: 100%;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    background: #311414;
+    height: 12vh;
+    text-align: center;
+}
+
+.header h1 {
+    color: #ffffff;
+    text-align: center; 
+    align-items: center;
+    margin-left: 22%;
+    text-transform: uppercase;
+}
+
+.header img { 
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    animation: aparecer 0.5s ease-out;
+}
+
+/* Container do Botão */
+.main-container {
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(#0000007c), url('./img/hangar.webp');
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ADICIONADO: Flex para colocar grupo de texto e imagem lado a lado */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 50px;
+}
+
+/* ADICIONADO: Garante que o botão fique abaixo do texto */
+.text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-container p {
+    color: #fff;
+    width: 500px;
+    font-size: 1.25rem;
+    text-align: justify;
+    /* Ajustado margin-right para não empurrar a imagem demais */
+    margin-bottom: 20px; 
+    font-weight: bold;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    
+}
+
+.side-image {
+    max-width: 600px;
+    margin-left: 10%;
+    height: auto;
+    border-radius: 10px;
+    border-color: #311414;
+}
+
+.main-container button {
+    margin-top: 15%;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    background: #311414;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+
+.main-container button:hover {
+    color: #311414;
+    background: #fff;
+    transform: scale(1.05);
+}
