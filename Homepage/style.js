@@ -41,7 +41,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var markers = L.markerClusterGroup();
 
-// seus imóveis
+
 var imoveis = [
   {
     nome: "Arte Vila Matilde",
