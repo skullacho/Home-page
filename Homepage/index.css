@@ -338,15 +338,12 @@ h2 {
     grid-template-columns: 1fr !important;
   }
 
-  .tab-btn {
-    width: 100%;
-  }
 
   #map {
     height: 300px;
   }
 
-  h1 {
+  h2 {
   margin-left: 0 !important;
   text-align: center;
   padding: 0 20px;
@@ -356,10 +353,10 @@ h2 {
   margin-left: 0 !important;
   margin-right: 0 !important;
 
-  display: block;          /* faz ocupar linha inteira */
-  width: calc(100% - 40px); /* deixa com espaço lateral */
+  display: block;         
+  width: calc(100% - 40px); 
     
-  margin: 20px auto;       /* centraliza */
+  margin: 20px auto;       
   text-align: center;
   }
 }
