@@ -315,7 +315,7 @@ h2 {
   font-size: 3vh;
 }
 
-/* ===== RESPONSIVO (SEM MUDAR SEU LAYOUT) ===== */
+
 @media (max-width: 768px) {
 
   h2,
