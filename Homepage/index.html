@@ -1,184 +1,202 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imobiliária Hangar Prime</title>
-    <link rel="stylesheet" href="./index.css">
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css"/>
-
+    <title>Hangar Prime Imobiliária</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    </div>
-    <div class="landing">
-        
-        <header class="header">
-            <img class="headerimg" src="./img/download.png" alt="">
-        
-            
-            <nav class="infos">
-                
-            </nav>
 
-    <div class="menu-btn" onclick="toggleMenu()">
-    ☰
-    </div>
-
-    <!-- Menu lateral -->
-    <div id="sidebar" class="sidebar">
-      <a href="#">Área do Cliente</a>
-      <a href="#">Contato</a>
-      <a href="#">Imóveis</a>
-      <a href="#">Simular Financiamento</a>
-      <a href="#">Sobre Nós</a>
-    </div>
-
-            <script src="./style.js"></script>
-        </header>
-
-        
-        
-        <main class="main-content">
-
-            
-
-            <div class="search-container">
-                
-                <div class="tabs">
-                    <button id="btn-comprar" class="tab-btn active" onclick="setAba('comprar')">Comprar</button>
-                    <button id="btn-alugar" class="tab-btn" onclick="setAba('alugar')">Alugar</button>
-                </div>
-
-                <div class="search-box">
-                    <div class="field-group">
-                        <label>Localização</label>
-                        <select id="select-local" class="select-imobiliaria">
-                            <option value="">Selecione a cidade...</option>
-                            <option value="sp">São Paulo - SP</option>
-                            <option value="rj">Rio de Janeiro - RJ</option>
-                            <option value="curitiba">Curitiba - PR</option>
-                        </select>
-                    </div>
-
-                    <div class="field-group">
-                        <label>Tipo de Imóvel</label>
-                        <select class="select-imobiliaria">
-                            <option value="casa">Casa</option>
-                            <option value="ap">Apartamento</option>
-                            <option value="lote">Terreno</option>
-                        </select>
-                    </div>
-
-                    <button class="btn-buscar-main" onclick="buscar()">BUSCAR</button>
-                </div>
-            </div>
-        </main>
-
-            
-        </button>
-    </div>
-
-    <div class="secondstage">
-
-        <h2>Imóveis na Planta</h2>
-        <button class="btn">Lançamentos</button>
-
-        <div class="cards">
-
-            <div class="card">
-                <img src="./img/apartamento 1.jpeg" alt="">
-                <div class="card-content">
-                    <h3>Arte Vila Matilde</h3>
-                    <p class="local">Rua Jorge Augusto, 624 – Vila Matilde – São Paulo/SP</p>
-
-                    <div class="info">
-                    <span>40,9m²</span>
-                    <span>2 quarto(s)</span>
-                    <span>1 vaga(s)</span>
-                    </div>
-
-                    <p class="price">R$ 447.881,00</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="./img/apartamento 2.jpeg" alt="">
-                <div class="card-content">
-                    <h3>Aviva Residencial Vila Matilde</h3>
-                    <p class="local">Rua Evans, 497 – Vila Esperança – São Paulo/SP</p>
-
-                    <div class="info">
-                        <span>50 a 73m²</span>
-                        <span>2 a 3 quarto(s)</span>
-                        <span>1 vaga(s)</span>
-                    </div>
-
-                    <p class="price">R$ 506.500,00</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="./img/apartamento 3.jpeg" alt="">
-                <div class="card-content">
-                    <h3>Inspire Esperança</h3>
-                    <p class="local">Rua Dr. Heládio, 478 – Vila Esperança – São Paulo/SP</p>
-
-                    <div class="info">
-                    <span>26,5 a 108,2m²</span>
-                    <span>1 a 3 quarto(s)</span>
-                    <span>0 a 1 vaga(s)</span>
-                    </div>
-
-                    <p class="price">R$ 234.449,00</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="./img/apartamento 4.png" alt="">
-                <div class="card-content">
-                    <h3>Apartamento no Tatuapé</h3>
-                    <p class="local">Rua Airi, 227 - sala 1018 - Tatuapé - São Paulo/SP</p>
-
-                    <div class="info">
-                    <span>73m²</span>
-                    <span>3 quarto(s)</span>
-                    <span>1 vaga(s)</span>
-                    </div>
-
-                    <p class="price">R$ 324.500,00</p>
-                </div>
-            </div>
-
+    <header>
+        <div class="header-container" id="logo-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
         </div>
-        </section>
-    </div>
-    <div class="containermap">
-            <h2>Encontre o seu imóvel pelo mapa</h2>
+        <nav class="header-container" id="nav-container">
+            <a class="header-link-nav" href="#">Comprar</a>
+            <a class="header-link-nav" href="#">Alugar</a>
+            <a class="header-link-nav" href="#">Buscar</a>
+            <a class="header-link-nav" href="#">Cadastrar</a>
+        </nav>
+        <div class="header-container" id="links-container">
+            <div id="header-menu" onclick="toggleMenu()">
+                <div class="hmenu-bars"></div>
+                <div class="hmenu-bars"></div>
+                <div class="hmenu-bars"></div>
+            </div>
+        </div>
 
+    </header>    
+        
+    <main class="main-content">
+
+        <section class="hero-section">
+            <h1 class="titulo-principal">Referência em locação e vendas em São Paulo</h1>
+    
+            <div class="card-pesquisa">
+                <div class="abas-navegacao">
+                    <button class="btn-aba ativa" onclick="selecionarAba(this)">COMPRAR</button>
+                    <button class="btn-aba" onclick="selecionarAba(this)">ALUGAR</button>
+                    <button class="btn-aba" onclick="selecionarAba(this)">LANÇAMENTOS</button>
+                </div>
+
+                <div class="formulario-filtros">
+                    <div class="linha-campos">
+                        <div class="campo-grupo">
+                            <label>TIPO</label>
+                            <select>
+                                <option>Casa</option>
+                                <option>Apartamento</option>
+                                <option>Tudo</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>CIDADE</label>
+                            <select>
+                                <option>São Paulo</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label>BAIRROS</label>
+                            <select>
+                                <option>Todos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="linha-campos">
+                        <div class="campo-grupo">
+                            <label>QUARTOS</label>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo valor-container">
+                            <label>VALOR</label>
+                            <div class="inputs-valor">
+                                <input type="text" placeholder="Min">
+                                <input type="text" placeholder="Max">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linha-final">
+                        <div class="campo-grupo flex-grow">
+                            <label>CONDOMÍNIOS</label>
+                            <select>
+                                <option>Todos</option>
+                            </select>
+                        </div>
+                        <button class="btn-buscar">BUSCAR IMÓVEIS</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secondstage">
+            <h2>Imóveis na Planta</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <img src="./img/apartamento 1.jpeg" alt="">
+                    <div class="card-content">
+                        <h3>Arte Vila Matilde</h3>
+                        <p class="local">Rua Jorge Augusto, 624 – Vila Matilde – SP</p>
+                        <div class="info">
+                            <span>40,9m²</span>
+                            <span>2 quarto(s)</span>
+                            <span>1 vaga(s)</span>
+                        </div>
+                        <p class="price">R$ 447.881,00</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./img/apartamento 2.jpeg" alt="">
+                    <div class="card-content">
+                        <h3>Aviva Residencial</h3>
+                        <p class="local">Rua Evans, 497 – Vila Esperança – SP</p>
+                        <div class="info">
+                            <span>50 a 73m²</span>
+                            <span>2 a 3 quarto(s)</span>
+                            <span>1 vaga(s)</span>
+                        </div>
+                        <p class="price">R$ 506.500,00</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./img/apartamento 3.jpeg" alt="">
+                    <div class="card-content">
+                        <h3>Inspire Esperança</h3>
+                        <p class="local">Rua Dr. Heládio, 478 – Vila Esperança – SP</p>
+                        <div class="info">
+                            <span>26,5 a 108,2m²</span>
+                            <span>1 a 3 quarto(s)</span>
+                            <span>0 a 1 vaga(s)</span>
+                        </div>
+                        <p class="price">R$ 234.449,00</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./img/apartamento 4.png" alt="">
+                    <div class="card-content">
+                        <h3>Apartamento no Tatuapé</h3>
+                        <p class="local">Rua Airi, 227 - Tatuapé - SP</p>
+                        <div class="info">
+                            <span>73m²</span>
+                            <span>3 quarto(s)</span>
+                            <span>1 vaga(s)</span>
+                        </div>
+                        <p class="price">R$ 324.500,00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="containermap">
+            <h2>Encontre o seu imóvel pelo mapa</h2>
             <div class="map-container">
                 <div class="busca">Busca Avançada ⌄</div>
                 <div id="map"></div>
             </div>
-
-            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-            <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
-            <script src="./style.js"></script>
-    </div>
-
-    <div class="info-sobrenos">
-        <h3 class="h3-1">Sobre Nós</h3>
-            <p>Entendemos o desafio de encontrar o imóvel ideal, e sabemos que se trata de uma das mais importantes e delicadas decisões da Vida, nosso objetivo é transformar essa jornada em uma Experiencia única, segura, agradável e acertiva. Em um mundo de praticidade (frieza) e dinamismo (pressa) estamos há mais de 1 década oferecendo um atendimento humanizado, lastreado no compromisso e confiança mútua, com foco na assessoria personalíssima e curadoria de imóveis de alto padrão para encontrarmos juntos a solução ideal.</p>
-        <h3 class="h3-2">Contate-nos</h3>
-            <p>Entre em contato com nossa equipe por meio dos métodos a seguir:</p>
-            <br>
+        </section>
+        <footer class="info-sobrenos">
+            <img src="./img/HangarPrimeicon.png" alt="">
+            <h3 class="h3-1">Sobre Nós</h3>
+            <p>Construindo caminhos para o seu futuro, um imóvel de cada vez.</p>
+            
+            <h3 class="h3-2">Contate-nos</h3>
+            <p>Entre em contato com nossa equipe:</p>
             <p>Telefone: +55 (11) 99582-1428</p>
+        </footer>
 
-    </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
     <script src="./style.js"></script>
+
+    <script>
+        function selecionarAba(elemento) {
+            const botoes = document.querySelectorAll('.btn-aba');
+            botoes.forEach(btn => btn.classList.remove('ativa'));
+            elemento.classList.add('ativa');
+        }
+
+        function toggleMenu() {
+            console.log("Menu clicado!");
+        }
+    </script>
 </body>
 </html>
