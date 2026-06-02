@@ -351,22 +351,152 @@ select, input {
     cursor: pointer;
 }
 
-/* --- SOBRE NÓS --- */
-.info-sobrenos {
-    background: #250d0d00;
-    padding: 80px 20px;
-    text-align: center;
+
+/* =========================
+   FOOTER PROFISSIONAL
+========================= */
+
+.footer {
+  background: #050505;
+  color: #fff;
+  padding-top: 70px;
+  margin-top: 80px;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-.info-sobrenos p {
-    max-width: 900px;
-    margin: 20px auto;
-    line-height: 1.6;
-    color: #ccc;
+.footer-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 50px;
 }
 
-.h3-1, .h3-2 {
-    font-size: 28px;
-    margin-top: 30px;
+.footer h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.footer p {
+  color: #bdbdbd;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.footer a {
+  color: #bdbdbd;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+/* LINKS */
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+/* SOCIAL */
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #ffffff;
+  color: #000;
+  transform: translateY(-5px);
+}
+
+/* PARTE DE BAIXO */
+
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  background: #030303;
+
+  padding: 25px 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #a8a8a8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding-top: 50px;
+  }
+
+  .footer-container {
+    gap: 40px;
+  }
+
+  .footer h2 {
+    font-size: 25px;
+  }
+
+  .footer h3 {
+    font-size: 18px;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 14px;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+
+}
