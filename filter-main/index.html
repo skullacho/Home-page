@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+<aside class="sidebar">
+
+
+    <div class="filtro">
+        <label>Cidade</label>
+        <select>
+            <option>São Paulo</option>
+            <option>Campinas</option>
+            <option>Rio de Janeiro</option>
+        </select>
+    </div>
+
+    <div class="filtro">
+        <label>Bairros</label>
+        <select>
+            <option>Todos</option>
+            <option>Centro</option>
+            <option>Zona Sul</option>
+        </select>
+    </div>
+
+    <div class="filtro">
+        <label>Tipo de imóvel</label>
+
+        <div class="opcoes">
+            <button>Apartamento</button>
+            <button>Casa</button>
+            <button>Terreno</button>
+            <button>Comercial</button>
+        </div>
+    </div>
+
+    <div class="filtro">
+        <label>Preço</label>
+
+        <div class="preco">
+            <input type="number" placeholder="Min">
+            <input type="number" placeholder="Max">
+        </div>
+    </div>
+
+    <button class="btn-filtrar">Filtrar</button>
+
+</aside>
+
+    <main class="content">
+
+        <div class="topo-lista">
+
+            <div class="topo-esquerda">
+                <h2>6 imóveis à venda em São Paulo</h2>
+            </div>
+
+            <div class="topo-direita">
+                <label for="ordenar">Ordenar por:</label>
+                <select id="ordenar">
+                    <option>Mais relevantes</option>
+                    <option>Menor preço</option>
+                    <option>Maior preço</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="cards-container">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/casa1.png" alt="">
+                    <span class="tag">NOVO</span>
+                    <span class="heart">❤</span>
+                </div>
+                <div class="card-content">
+                    <h3>Lugar 1 | São Paulo</h3>
+                    <p class="descricao">Casa à venda em São Paulo</p>
+                    <p class="preco">R$ 1.090.000</p>
+                </div>
+                <div class="divider"></div>
+                <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="extra-info">
+                    <div class="info">
+                        <span>162m²</span>
+                        <span>3 quartos</span>
+                        <span>4 vagas</span>
+                        <span>3 banhos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/casa1.png" alt="">
+                    <span class="tag">NOVO</span>
+                    <span class="heart">❤</span>
+                </div>
+                <div class="card-content">
+                    <h3>Lugar 2 | Campinas</h3>
+                    <p class="descricao">Casa moderna em condomínio</p>
+                    <p class="preco">R$ 890.000</p>
+                </div>
+                <div class="divider"></div>
+                <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="extra-info">
+                    <div class="info">
+                        <span>120m²</span>
+                        <span>2 quartos</span>
+                        <span>2 vagas</span>
+                        <span>2 banhos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/casa1.png" alt="">
+                    <span class="tag">NOVO</span>
+                    <span class="heart">❤</span>
+                </div>
+                <div class="card-content">
+                    <h3>Lugar 3 | Sao Sao Paulo</h3>
+                    <p class="descricao">Apartamento com vista</p>
+                    <p class="preco">R$ 650.000</p>
+                </div>
+                <div class="divider"></div>
+                <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="extra-info">
+                    <div class="info">
+                        <span>90m²</span>
+                        <span>2 quartos</span>
+                        <span>1 vaga</span>
+                        <span>2 banhos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/casa1.png" alt="">
+                    <span class="tag">NOVO</span>
+                    <span class="heart">❤</span>
+                </div>
+                <div class="card-content">
+                    <h3>Lugar 4 | Guarulhos</h3>
+                    <p class="descricao">Casa ampla com quintal</p>
+                    <p class="preco">R$ 780.000</p>
+                </div>
+                <div class="divider"></div>
+                <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="extra-info">
+                    <div class="info">
+                        <span>140m²</span>
+                        <span>3 quartos</span>
+                        <span>2 vagas</span>
+                        <span>2 banhos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/casa1.png" alt="">
+                    <span class="tag">NOVO</span>
+                    <span class="heart">❤</span>
+                </div>
+                <div class="card-content">
+                    <h3>Lugar 5 | Paulo Sao</h3>
+                    <p class="descricao">Sobrado moderno</p>
+                    <p class="preco">R$ 920.000</p>
+                </div>
+                <div class="divider"></div>
+                <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="extra-info">
+                    <div class="info">
+                        <span>150m²</span>
+                        <span>3 quartos</span>
+                        <span>3 vagas</span>
+                        <span>3 banhos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/casa1.png" alt="">
+                    <span class="tag">NOVO</span>
+                    <span class="heart">❤</span>
+                </div>
+                <div class="card-content">
+                    <h3>Lugar 6 | Sao Paulao</h3>
+                    <p class="descricao">Casa em bairro tranquilo</p>
+                    <p class="preco">R$ 700.000</p>
+                </div>
+                <div class="divider"></div>
+                <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="extra-info">
+                    <div class="info">
+                        <span>130m²</span>
+                        <span>2 quartos</span>
+                        <span>2 vagas</span>
+                        <span>2 banhos</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
