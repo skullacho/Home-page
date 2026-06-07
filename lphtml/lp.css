@@ -1,70 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
+
+:root {
+    --general-color: #311414;
+    --secondary-color: #ffffff;
+    --font: "Google Sans", sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body, html {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+body {
+    font-family: var(--font);
+    background-color: var(--general-color);
+    color: var(--secondary-color);
     overflow-x: hidden;
-    overflow: auto;
-    background-color: #000; 
 }
 
-/* Scroll invisível */
-body::-webkit-scrollbar { display: none; }
-body { scrollbar-width: none; -ms-overflow-style: none; }
-
-.top-slogan {
-    width: 100%;
-    background-color: #1a1a1a;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    animation: aparecer 0.5s ease-out;
-}
-
-.header {
-    width: 100%;
-    padding: 20px 30px;
+/* --- HEADER --- */
+header {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1200px;
+    height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background: #311414;
-    height: 70px;
-    animation: aparecer 0.5s ease-out;
+    padding: 0 30px;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    z-index: 2000;
 }
 
-.header img {
-    position: relative;
-    width: 8rem;
-    height: 10rem;
-    animation: aparecer 0.5s ease-out;
+/* Ajustado para não usar porcentagem fixa que quebra o layout */
+#nav-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-content: center;
+    flex: 1; /* Distribui o espaço uniformemente */
+}
+
+.header-link-nav {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#links-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#account-link {
+    border: 1px solid white;
+    padding: 8px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.hmenu-bars {
+    width: 22px;
+    height: 2px;
+    background: white;
+    margin: 4px 0;
 }
 
 .titulo {
     color: white;
     font-size: 1.7rem;
     letter-spacing: 1px;
-    margin-top: 1%;
     display: flex;
 }
 
+/* --- LANDING (BACKGROUND ARRUMADO) --- */
 .landing {
     width: 100%;
-    min-height: calc(100vh - 110px);
-    background-image: linear-gradient(#31141400, rgba(49, 20, 20, 1)), url('./img/hangar.webp');
+    min-height: 100vh; /* Ocupa a tela cheia */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.451), rgba(0, 0, 0, 0.451)), url('./img/hangar.webp');
     background-size: cover;
+    background-position: center; /* Garante que a imagem fique centralizada */
+    background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 50px;
+    padding: 110px 50px 50px 50px; /* O padding-top empurra o conteúdo para baixo do header fixed */
 }
 
 .content-wrapper {
@@ -92,7 +124,7 @@ body { scrollbar-width: none; -ms-overflow-style: none; }
 }
 
 .img-container {
-  position: relative;
+    position: relative;
     flex: 1.2;
     height: 450px;
     overflow: hidden;
@@ -108,24 +140,26 @@ body { scrollbar-width: none; -ms-overflow-style: none; }
 }
 
 .img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;                
-  align-items: center;
-  justify-content: center;    
-  background: rgba(0, 0, 0, 0);
-  text-decoration: none;        
-  z-index: 10;                  
-  transition: background 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;                  
+    align-items: center;
+    justify-content: center;    
+    background: rgba(0, 0, 0, 0);
+    text-decoration: none;        
+    z-index: 10;                  
+    transition: background 0.5s ease;
 }
-.img-overlay a{
-  text-decoration: none;
-  display: block;
-  color: #fff;
+
+.img-overlay a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
 }
+
 .hover-msg {
     color: white;
     font-weight: bold;
@@ -136,9 +170,9 @@ body { scrollbar-width: none; -ms-overflow-style: none; }
     pointer-events: none; 
 }
 
-
+/* Efeito Hover Corrigido: escurece para 0.6 ou 0.7 para ainda ver o fundo se quiser, ou 1 para preto total */
 .img-container:hover .img-overlay {
-    background: rgba(0, 0, 0, 1); 
+    background: rgba(0, 0, 0, 0.7); 
 }
 
 .img-container:hover .hover-msg {
