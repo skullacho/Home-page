@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
+
+:root {
+    --general-color: #311414;
+    --secondary-color: #ffffff;
+    --font: "Google Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--general-color);
+    color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+/* --- HEADER --- */
+header {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1200px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    z-index: 2000;
+}
+
+/* Ajustado para não usar porcentagem fixa que quebra o layout */
+#nav-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-content: center;
+    flex: 1; /* Distribui o espaço uniformemente */
+}
+
+.header-link-nav {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#links-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#account-link {
+    border: 1px solid white;
+    padding: 8px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.hmenu-bars {
+    width: 22px;
+    height: 2px;
+    background: white;
+    margin: 4px 0;
+}
+
+.titulo {
+    color: white;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    display: flex;
+}
+
+/* --- LANDING (BACKGROUND ARRUMADO) --- */
+.landing {
+    width: 100%;
+    min-height: 100vh; /* Ocupa a tela cheia */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.451), rgba(0, 0, 0, 0.451)), url('./img/hangar.webp');
+    background-size: cover;
+    background-position: center; /* Garante que a imagem fique centralizada */
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 50px 50px 50px; /* O padding-top empurra o conteúdo para baixo do header fixed */
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.texto-diladinho {
+    flex: 1;
+    color: white;
+    animation: aparecer 0.8s ease-out;
+}
+
+.texto-diladinho h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.texto-diladinho p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.img-container {
+    position: relative;
+    flex: 1.2;
+    height: 450px;
+    overflow: hidden;
+    border: 1px solid #311414; 
+    border-radius: 10px;
+}
+
+.sede-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;                  
+    align-items: center;
+    justify-content: center;    
+    background: rgba(0, 0, 0, 0);
+    text-decoration: none;        
+    z-index: 10;                  
+    transition: background 0.5s ease;
+}
+
+.img-overlay a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+}
+
+.hover-msg {
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 15px 25px;
+    opacity: 0;
+    transition: 0.5s ease;
+    pointer-events: none; 
+}
+
+/* Efeito Hover Corrigido: escurece para 0.6 ou 0.7 para ainda ver o fundo se quiser, ou 1 para preto total */
+.img-container:hover .img-overlay {
+    background: rgba(0, 0, 0, 0.7); 
+}
+
+.img-container:hover .hover-msg {
+    opacity: 1;
+}
+
+.img-container:hover .sede-img {
+    transform: scale(1.05);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
