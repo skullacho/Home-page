@@ -17,23 +17,24 @@
 <aside class="sidebar">
 
 
-    <div class="filtro">
-        <label>Cidade</label>
-        <select>
-            <option>São Paulo</option>
-            <option>Campinas</option>
-            <option>Rio de Janeiro</option>
-        </select>
-    </div>
+<div class="filtro">
+    <label>Cidade</label>
+    <select id="cidade">
+        <option value="todos">Todas</option>
+        <option value="sao-paulo">São Paulo</option>
+        <option value="campinas">Campinas</option>
+        <option value="rio-de-janeiro">Rio de Janeiro</option>
+    </select>
+</div>
 
-    <div class="filtro">
-        <label>Bairros</label>
-        <select>
-            <option>Todos</option>
-            <option>Centro</option>
-            <option>Zona Sul</option>
-        </select>
-    </div>
+<div class="filtro">
+    <label>Bairros</label>
+    <select id="bairro">
+        <option value="todos">Todos</option>
+        <option value="centro">Centro</option>
+        <option value="zona-sul">Zona Sul</option>
+    </select>
+</div>
 
     <div class="filtro">
         <label>Tipo de imóvel</label>
@@ -50,8 +51,8 @@
         <label>Preço</label>
 
         <div class="preco">
-            <input type="number" placeholder="Min">
-            <input type="number" placeholder="Max">
+            <input type="number" id="precoMin" placeholder="Min">
+            <input type="number" id="precoMax" placeholder="Max">
         </div>
     </div>
 
@@ -64,7 +65,7 @@
         <div class="topo-lista">
 
             <div class="topo-esquerda">
-                <h2>6 imóveis à venda em São Paulo</h2>
+                <h2 id="contador">24 imóveis encontrados</h2>
             </div>
 
             <div class="topo-direita">
@@ -80,14 +81,18 @@
 
         <div class="cards-container">
 
-            <div class="card">
+            <div class="card"
+                data-tipo="casa"
+                data-cidade="sao-paulo"
+                data-bairro="zona-sul"
+                data-preco="1090000">
                 <div class="card-image">
-                    <img src="img/casa1.png" alt="">
+                    <img src="img/casa1.jpg" alt="">
                     <span class="tag">NOVO</span>
                     <span class="heart">❤</span>
                 </div>
                 <div class="card-content">
-                    <h3>Lugar 1 | São Paulo</h3>
+                    <h3> Mooca | São Paulo</h3>
                     <p class="descricao">Casa à venda em São Paulo</p>
                     <p class="preco">R$ 1.090.000</p>
                 </div>
@@ -103,15 +108,19 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card"
+     data-tipo="casa"
+     data-cidade="campinas"
+     data-bairro="centro"
+     data-preco="890000">
                 <div class="card-image">
-                    <img src="img/casa1.png" alt="">
+                    <img src="img/casa2.jpg" alt="">
                     <span class="tag">NOVO</span>
                     <span class="heart">❤</span>
                 </div>
                 <div class="card-content">
-                    <h3>Lugar 2 | Campinas</h3>
-                    <p class="descricao">Casa moderna em condomínio</p>
+                    <h3>Cambuí | Campinas</h3>
+                    <p class="descricao">Casa à venda em campinas</p>
                     <p class="preco">R$ 890.000</p>
                 </div>
                 <div class="divider"></div>
@@ -126,14 +135,18 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card"
+     data-tipo="apartamento"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-preco="650000">
                 <div class="card-image">
-                    <img src="img/casa1.png" alt="">
+                    <img src="img/apartamento1.webp" alt="">
                     <span class="tag">NOVO</span>
                     <span class="heart">❤</span>
                 </div>
                 <div class="card-content">
-                    <h3>Lugar 3 | Sao Sao Paulo</h3>
+                    <h3>Pinheiros | São Paulo</h3>
                     <p class="descricao">Apartamento com vista</p>
                     <p class="preco">R$ 650.000</p>
                 </div>
@@ -149,14 +162,18 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card"
+     data-tipo="casa"
+     data-cidade="sao-paulo"
+     data-bairro="zona-sul"
+     data-preco="780000">
                 <div class="card-image">
-                    <img src="img/casa1.png" alt="">
+                    <img src="img/casa3.jpg" alt="">
                     <span class="tag">NOVO</span>
                     <span class="heart">❤</span>
                 </div>
                 <div class="card-content">
-                    <h3>Lugar 4 | Guarulhos</h3>
+                    <h3>Vila Galvão | Guarulhos</h3>
                     <p class="descricao">Casa ampla com quintal</p>
                     <p class="preco">R$ 780.000</p>
                 </div>
@@ -172,14 +189,18 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card"
+     data-tipo="casa"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-preco="920000">
                 <div class="card-image">
-                    <img src="img/casa1.png" alt="">
+                    <img src="img/casa4.jpg" alt="">
                     <span class="tag">NOVO</span>
                     <span class="heart">❤</span>
                 </div>
                 <div class="card-content">
-                    <h3>Lugar 5 | Paulo Sao</h3>
+                    <h3>Tatuapé | São Paulo</h3>
                     <p class="descricao">Sobrado moderno</p>
                     <p class="preco">R$ 920.000</p>
                 </div>
@@ -195,14 +216,18 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card"
+     data-tipo="casa"
+     data-cidade="sao-paulo"
+     data-bairro="zona-sul"
+     data-preco="700000">
                 <div class="card-image">
-                    <img src="img/casa1.png" alt="">
+                    <img src="img/casa5.jpg" alt="">
                     <span class="tag">NOVO</span>
                     <span class="heart">❤</span>
                 </div>
                 <div class="card-content">
-                    <h3>Lugar 6 | Sao Paulao</h3>
+                    <h3>Vila Mariana | São Paulo</h3>
                     <p class="descricao">Casa em bairro tranquilo</p>
                     <p class="preco">R$ 700.000</p>
                 </div>
@@ -217,7 +242,167 @@
                     </div>
                 </div>
             </div>
+<div class="card"
+     data-tipo="apartamento"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-preco="550000">
+    <div class="card-image">
+        <img src="img/casa6.jpg" alt="">
+        <span class="tag">NOVO</span>
+        <span class="heart">❤</span>
+    </div>
+    <div class="card-content">
+        <h3>Santana | São Paulo</h3>
+        <p class="descricao">Apartamento compacto</p>
+        <p class="preco">R$ 550.000</p>
+    </div>
+    <div class="divider"></div>
+    <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="extra-info">
+        <div class="info">
+            <span>80m²</span>
+            <span>2 quartos</span>
+            <span>1 vaga</span>
+            <span>1 banho</span>
+        </div>
+    </div>
+</div>
 
+<div class="card"
+     data-tipo="terreno"
+     data-cidade="campinas"
+     data-bairro="centro"
+     data-preco="300000">
+    <div class="card-image">
+        <img src="img/terreno1.webp" alt="">
+        <span class="tag">NOVO</span>
+        <span class="heart">❤</span>
+    </div>
+    <div class="card-content">
+        <h3>Itaquera | Campinas</h3>
+        <p class="descricao">Terreno amplo</p>
+        <p class="preco">R$ 300.000</p>
+    </div>
+    <div class="divider"></div>
+    <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="extra-info">
+        <div class="info">
+            <span>300m²</span>
+            <span>-</span>
+            <span>-</span>
+            <span>-</span>
+        </div>
+    </div>
+</div>
+
+<div class="card"
+     data-tipo="comercial"
+     data-cidade="rio-de-janeiro"
+     data-bairro="centro"
+     data-preco="1200000">
+    <div class="card-image">
+        <img src="img/comercial1.webp" alt="">
+        <span class="tag">NOVO</span>
+        <span class="heart">❤</span>
+    </div>
+    <div class="card-content">
+        <h3>Tijuca | Rio de Janeiro</h3>
+        <p class="descricao">Ponto comercial</p>
+        <p class="preco">R$ 1.200.000</p>
+    </div>
+    <div class="divider"></div>
+    <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="extra-info">
+        <div class="info">
+            <span>200m²</span>
+            <span>-</span>
+            <span>2 vagas</span>
+            <span>2 banhos</span>
+        </div>
+    </div>
+</div>
+
+<div class="card"
+     data-tipo="apartamento"
+     data-cidade="sao-paulo"
+     data-bairro="zona-sul"
+     data-preco="480000">
+    <div class="card-image">
+        <img src="img/apartamento2.webp" alt="">
+        <span class="tag">NOVO</span>
+        <span class="heart">❤</span>
+    </div>
+    <div class="card-content">
+        <h3>Itaquera | São Paulo</h3>
+        <p class="descricao">Apartamento econômico</p>
+        <p class="preco">R$ 480.000</p>
+    </div>
+    <div class="divider"></div>
+    <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="extra-info">
+        <div class="info">
+            <span>70m²</span>
+            <span>2 quartos</span>
+            <span>1 vaga</span>
+            <span>1 banho</span>
+        </div>
+    </div>
+</div>
+
+<div class="card"
+     data-tipo="terreno"
+     data-cidade="sao-paulo"
+     data-bairro="centro"
+     data-preco="250000">
+    <div class="card-image">
+        <img src="img/terreno2.webp"">
+        <span class="tag">NOVO</span>
+        <span class="heart">❤</span>
+    </div>
+    <div class="card-content">
+        <h3>Picanço | Guarulhos</h3>
+        <p class="descricao">Terreno residencial</p>
+        <p class="preco">R$ 250.000</p>
+    </div>
+    <div class="divider"></div>
+    <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="extra-info">
+        <div class="info">
+            <span>280m²</span>
+            <span>-</span>
+            <span>-</span>
+            <span>-</span>
+        </div>
+    </div>
+</div>
+
+<div class="card"
+     data-tipo="comercial"
+     data-cidade="sao-paulo"
+     data-bairro="zona-sul"
+     data-preco="950000">
+    <div class="card-image">
+        <img src="img/comercial2.webp" alt="">
+        <span class="tag">NOVO</span>
+        <span class="heart">❤</span>
+    </div>
+    <div class="card-content">
+        <h3>Itaquera| São Paulo</h3>
+        <p class="descricao">Sala comercial moderna</p>
+        <p class="preco">R$ 950.000</p>
+    </div>
+    <div class="divider"></div>
+    <div class="toggle-btn"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="extra-info">
+        <div class="info">
+            <span>110m²</span>
+            <span>-</span>
+            <span>2 vagas</span>
+            <span>1 banho</span>
+        </div>
+    </div>
+</div>
         </div>
     </main>
 
