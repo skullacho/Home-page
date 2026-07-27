@@ -88,7 +88,7 @@ header {
 .landing {
     width: 100%;
     min-height: 100vh; /* Ocupa a tela cheia */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.451), rgba(0, 0, 0, 0.451)), url('./img/hangar.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.451), rgba(0, 0, 0, 0.451)), url('./img/hangar.png');
     background-size: cover;
     background-position: center; /* Garante que a imagem fique centralizada */
     background-repeat: no-repeat;
