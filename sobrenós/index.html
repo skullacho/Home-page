@@ -3,58 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós | Sua Marca</title>
-    <link rel="stylesheet" href="./style.css"> </head>
+    <title>Sobre Nós | Hangar Prime Imóveis</title>
+
+    <!-- Fontes e Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
+    <!-- CABEÇALHO GLOBAL -->
     <header>
-        <div class="header-container" id="logo-container">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <a href="https://home-page-bice-ten.vercel.app/" class="header-container" id="logo-container" aria-label="Ir para a página inicial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 <polyline points="9 22 9 12 15 12 15 22" />
             </svg>
+        </a>
+
+        <nav id="nav-container">
+            <a href="https://home-page-bice-ten.vercel.app/" class="header-link-nav">Início</a>
+            <a href="https://w.app/hangarprimeim" class="header-link-nav">Contato</a>
+            <a href="https://home-page-f3kv.vercel.app/" class="header-link-nav">Imóveis</a>
+            <a href="https://sobre-nos-kappa.vercel.app/" class="header-link-nav active">Sobre Nós</a>
+        </nav>
+
+        <div id="links-container">
+            <div id="header-menu" onclick="toggleMenu()" aria-label="Abrir menu">
+                <div class="hmenu-bars"></div>
+                <div class="hmenu-bars"></div>
+                <div class="hmenu-bars"></div>
+            </div>
         </div>
-        <div id="nav-container">
-            <a href="https://home-page-bice-ten.vercel.app//" class="header-link-nav">Início</a>
-            <a class="header-link-nav" href="https://w.app/hangarprimeim">Contato</a>
-            <a class="header-link-nav" href="https://home-page-f3kv.vercel.app/">Imóveis</a>
-            <a class="header-link-nav" href="https://sobre-nos-kappa.vercel.app/">Sobre Nós</a>
-        </div>
-        
     </header>
 
+    <!-- SEÇÃO HERO PRINCIPAL -->
     <section class="main-content">
         <div class="hero-section">
             <h1 class="titulo-principal">De lar em lar, criando famílias</h1>
         </div>
     </section>
 
+    <!-- SEÇÃO SOBRE NÓS E MISSÃO/VALORES -->
     <section class="secondstage">
-        <div style="max-width: 800px; text-align: center; line-height: 1.6;">
-            <h2 style="font-size: 2rem; margin-bottom: 20px; color: #ffffff;">Sobre Nós</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
-                A Hangar PRIME não se define apenas como uma imobiliária, mas sim como um ecossistema imobiliário. Isso significa que a empresa reúne diversos serviços e profissionais em um único ambiente, facilitando toda a jornada do cliente.
+        <div class="about-container">
+            <h2>Sobre Nós</h2>
+            <p class="about-description">
+                A <strong>Hangar PRIME</strong> não se define apenas como uma imobiliária, mas sim como um ecossistema imobiliário. Isso significa que a empresa reúne diversos serviços e profissionais em um único ambiente, facilitando toda a jornada do cliente.
+            </p>
 
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px;">
-                <div style="padding: 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;">
-                    <h3 style="margin-bottom: 10px;">Missão</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">
-                        entender e encantar pessoas, proporcionando uma experiência única durante toda a jornada imobiliária.
-                    </p>
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Missão</h3>
+                    <p>Entender e encantar pessoas, proporcionando uma experiência única durante toda a jornada imobiliária.</p>
                 </div>
-                <div style="padding: 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;">
-                    <h3 style="margin-bottom: 10px;">Valores</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">segurança, integridade, agilidade, dedicação e inovação.</p>
+                <div class="info-card">
+                    <h3>Valores</h3>
+                    <p>Segurança, integridade, agilidade, dedicação e inovação.</p>
                 </div>
+            </div>
+
+            <!-- LOCALIZAÇÃO -->
+            <div class="address-box">
+                <p><i class="fa-solid fa-location-dot"></i> Rua Airi 227, SALA 1018, Vila Gomes Cardim, São Paulo - SP</p>
+                <p><i class="fa-solid fa-phone"></i> (11) 99582-1428</p>
             </div>
         </div>
     </section>
-        <div style="margin-top: 40px; text-align: center;">
-            <p>Rua Airi 227, SALA1018, Vila Gomes Cardim, São Paulo</p>
-            <p>(11) 99582-1428</p>
-        </div>
-    </section>
 
+    <!-- RODAPÉ GLOBAL -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>Hangar Prime Imóveis</h2>
+                <p>Construindo caminhos para o seu futuro, um imóvel de cada vez.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="https://home-page-bice-ten.vercel.app/">Início</a></li>
+                    <li><a href="https://home-page-f3kv.vercel.app/">Imóveis</a></li>
+                    <li><a href="https://sobre-nos-kappa.vercel.app/">Sobre Nós</a></li>
+                    <li><a href="https://w.app/hangarprimeim">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <p>📞 +55 (11) 99582-1428</p>
+                <p>✉ valter@hangarprime.com.br</p>
+                <p>📍 São Paulo - SP</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/imoveishangarprime/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/hangarimobimoveis/?originalSubdomain=br" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://w.app/hangarprimeim" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Hangar Prime Imóveis. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
