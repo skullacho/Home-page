@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let indice = 0;
     let total = 0;
     let inicioToque = null;
+    let imoveisDoBanco = [];
 
     function visiveis() { return window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3; }
     function atualizar() {
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!resposta.ok) throw new Error("Falha ao consultar imóveis");
         const dados = await resposta.json();
         const imoveis = Array.isArray(dados) ? dados : (Array.isArray(dados.imoveis) ? dados.imoveis : []);
+        imoveisDoBanco = imoveis;
         const selecionados = [...imoveis].sort((a,b) => Number(Boolean(b.destaque)) - Number(Boolean(a.destaque))).slice(0,12);
         total = selecionados.length;
         if (!total) {
@@ -74,14 +76,48 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const mapElement = document.getElementById("map");
     if (mapElement && typeof L !== "undefined") {
-        const map = L.map("map").setView([-23.55, -46.63], 11);
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution:"© OpenStreetMap"}).addTo(map);
-        // Preserva os marcadores já existentes do mapa original.
-        const pontos = [
-            {nome:"Arte Vila Matilde",lat:-23.5315,lng:-46.5200},
-            {nome:"Aviva Residencial Vila Matilde",lat:-23.5280,lng:-46.5150},
-            {nome:"Inspire Esperança",lat:-23.5265,lng:-46.5175}
-        ];
-        pontos.forEach(ponto => L.marker([ponto.lat,ponto.lng]).addTo(map).bindPopup(escaparHTML(ponto.nome)));
+        const map = L.map("map").setView([-23.55, -46.63], 10);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(map);
+
+        const limites = [];
+        imoveisDoBanco.forEach(imovel => {
+            // Não inventa posições para imóveis antigos sem coordenadas.
+            if (imovel.latitude === null || imovel.latitude === undefined ||
+                imovel.longitude === null || imovel.longitude === undefined ||
+                imovel.latitude === "" || imovel.longitude === "") return;
+
+            const latitude = Number(imovel.latitude);
+            const longitude = Number(imovel.longitude);
+            if (!Number.isFinite(latitude) || !Number.isFinite(longitude) ||
+                Math.abs(latitude) > 90 || Math.abs(longitude) > 180) return;
+
+            const id = encodeURIComponent(String(imovel._id || ""));
+            const url = `${URL_CATALOGO}imovel/index.html?id=${id}`;
+            const nome = escaparHTML(imovel.titulo || "Imóvel");
+            const local = escaparHTML([imovel.bairro, imovel.cidade].filter(Boolean).join(" - "));
+            const popup = `<div class="popup-imovel"><strong>${nome}</strong><br>${local}<br>` +
+                `<strong>${formatarPreco(imovel.preco)}</strong><br>` +
+                `<a href="${url}">Ver detalhes do imóvel →</a></div>`;
+
+            L.marker([latitude, longitude]).addTo(map).bindPopup(popup);
+            limites.push([latitude, longitude]);
+        });
+
+        if (limites.length === 1) map.setView(limites[0], 15);
+        else if (limites.length > 1) map.fitBounds(limites, {padding: [35, 35], maxZoom: 15});
+
+        if (!limites.length) {
+            const aviso = L.control({position: "bottomleft"});
+            aviso.onAdd = () => {
+                const elemento = L.DomUtil.create("div", "mapa-aviso");
+                elemento.textContent = "Nenhum imóvel com localização cadastrada no momento.";
+                elemento.style.cssText = "background:white;color:#311414;padding:10px;border-radius:7px;box-shadow:0 2px 8px #0003;font-size:13px;";
+                return elemento;
+            };
+            aviso.addTo(map);
+        }
+        setTimeout(() => map.invalidateSize(), 100);
     }
 });
