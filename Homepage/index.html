@@ -38,130 +38,25 @@
     <main class="main-content">
 
         <section class="hero-section">
-            <h1 class="titulo-principal">Referência em locação e vendas em São Paulo</h1>
-    
-            <div class="card-pesquisa">
-                <div class="abas-navegacao">
-                    <button class="btn-aba ativa" onclick="selecionarAba(this)">COMPRAR</button>
-                    <button class="btn-aba" onclick="selecionarAba(this)">ALUGAR</button>
-                    <button class="btn-aba" onclick="selecionarAba(this)">LANÇAMENTOS</button>
-                </div>
-
-                <div class="formulario-filtros">
-                    <div class="linha-campos">
-                        <div class="campo-grupo">
-                            <label>TIPO</label>
-                            <select>
-                                <option>Casa</option>
-                                <option>Apartamento</option>
-                                <option>Tudo</option>
-                            </select>
-                        </div>
-
-                        <div class="campo-grupo">
-                            <label>CIDADE</label>
-                            <select>
-                                <option>São Paulo</option>
-                            </select>
-                        </div>
-
-                        <div class="campo-grupo">
-                            <label>BAIRROS</label>
-                            <select>
-                                <option>Todos</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="linha-campos">
-                        <div class="campo-grupo">
-                            <label>QUARTOS</label>
-                            <select>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3+</option>
-                            </select>
-                        </div>
-
-                        <div class="campo-grupo valor-container">
-                            <label>VALOR</label>
-                            <div class="inputs-valor">
-                                <input type="text" placeholder="Min">
-                                <input type="text" placeholder="Max">
-                            </div>
-                        </div>
-
-                        <div class="campo-grupo">
-                            <label>CONDOMÍNIOS</label>
-                            <select>
-                                <option>Todos</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="linha-final">
-                        <button
-                                class="btn-buscar"
-                                type="button"
-                                onclick="window.location.href='https://tcc-3-frontend.vercel.app/'"
-                            >
-                            BUSCAR IMÓVEIS
-                        </button>
-                    </div>
-                </div>
+            <div class="hero-eyebrow"><span class="hero-dot"></span> HANGAR PRIME IMÓVEIS <span class="hero-line"></span> ENCONTRE SEU LUGAR</div>
+            <h1 class="titulo-principal">O próximo capítulo da sua história <em>começa aqui.</em></h1>
+            <p class="hero-subtitulo">Seu novo endereço está a poucos cliques. Explore imóveis selecionados para diferentes estilos de vida.</p>
+            <div class="hero-acoes">
+                <a class="hero-btn hero-btn-primary" href="https://tcc-3-frontend.vercel.app/?finalidade=Venda">Quero comprar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a class="hero-btn hero-btn-outline" href="https://tcc-3-frontend.vercel.app/?finalidade=Aluguel">Quero alugar <i class="fa-solid fa-arrow-right"></i></a>
             </div>
+            <a class="hero-explorar" href="https://tcc-3-frontend.vercel.app/">Explorar todos os imóveis <i class="fa-solid fa-arrow-down"></i></a>
+            <div class="hero-decor hero-decor-one" aria-hidden="true"></div>
+            <div class="hero-decor hero-decor-two" aria-hidden="true"></div>
         </section>
 
-        <section class="secondstage">
-            <h2>Imóveis na Planta</h2>
-
-            <div class="cards">
-                <div class="card">
-                    <img src="./img/apartamento 1.jpeg" alt="Arte Vila Matilde">
-                    <div class="card-content">
-                        <h3>Arte Vila Matilde</h3>
-                        <p class="local">Rua Jorge Augusto, 624 – Vila Matilde – SP</p>
-                        <div class="info">
-                            <span>40,9m²</span>
-                            <span>2 quarto(s)</span>
-                            <span>1 vaga(s)</span>
-                        </div>
-                        <p class="price">R$ 447.881,00</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./img/apartamento 2.jpeg" alt="Aviva Residencial">
-                    <div class="card-content">
-                        <h3>Aviva Residencial</h3>
-                        <p class="local">Rua Evans, 497 – Vila Esperança – SP</p>
-                        <div class="info">
-                            <span>50 a 73m²</span>
-                            <span>2 a 3 quarto(s)</span>
-                            <span>1 vaga(s)</span>
-                        </div>
-                        <p class="price">R$ 506.500,00</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./img/apartamento 3.jpeg" alt="Inspire Esperança">
-                    <div class="card-content">
-                        <h3>Inspire Esperança</h3>
-                        <p class="local">Rua Dr. Heládio, 478 – Vila Esperança – SP</p>
-                        <div class="info">
-                            <span>26,5 a 108,2m²</span>
-                            <span>1 a 3 quarto(s)</span>
-                            <span>0 a 1 vaga(s)</span>
-                        </div>
-                        <p class="price">R$ 234.449,00</p>
-                    </div>
-                </div>
-
-
-                    </div>
-                </div>
+        <section class="secondstage" id="imoveis-destaque">
+            <div class="slider-cabecalho">
+                <div><p class="slider-sobretitulo">SELEÇÃO HANGAR PRIME</p><h2>Imóveis em destaque<span class="slider-ponto">.</span></h2><p class="slider-descricao">Conheça algumas oportunidades disponíveis no nosso catálogo.</p></div>
+                <div class="slider-controles"><button type="button" id="slider-anterior" aria-label="Imóvel anterior"><i class="fa-solid fa-arrow-left"></i></button><button type="button" id="slider-proximo" aria-label="Próximo imóvel"><i class="fa-solid fa-arrow-right"></i></button></div>
             </div>
+            <div class="slider-viewport"><div class="slider-track" id="slider-imoveis"><p class="slider-estado">Carregando imóveis...</p></div></div>
+            <a class="slider-ver-todos" href="https://tcc-3-frontend.vercel.app/">Ver catálogo completo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </section>
 
         <section class="containermap">
@@ -185,7 +80,7 @@
                     <h3>Links Rápidos</h3>
                     <ul>
                         <li><a href="https://lp-wbni.vercel.app/">Início</a></li>
-                        <li><a href="https://home-page-f3kv.vercel.app/">Imóveis</a></li>
+                        <li><a href="https://tcc-3-frontend.vercel.app/">Imóveis</a></li>
                         <li><a href="https://sobre-nos-kappa.vercel.app/">Sobre Nós</a></li>
                         <li><a href="https://w.app/hangarprimeim">Contato</a></li>
                     </ul>
@@ -224,12 +119,6 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="./style.js"></script>
-    <script>
-        function selecionarAba(elemento) {
-            const botoes = document.querySelectorAll('.btn-aba');
-            botoes.forEach(btn => btn.classList.remove('ativa'));
-            elemento.classList.add('ativa');
-        }
-    </script>
+
 </body>
 </html>
